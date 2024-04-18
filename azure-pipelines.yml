@@ -24,10 +24,14 @@ stages:
 - stage: Build
   displayName: Build stage
   jobs:
+  
   - job: Build
+  
     displayName: Build
+    
     pool:
       vmImage: $(vmImageName)
+      parallel: 1
 
     steps:
     - task: NodeTool@0
@@ -64,6 +68,7 @@ stages:
     pool:
       vmImage: $(vmImageName)
     strategy:
+    
       runOnce:
         deploy:
           steps:
