@@ -64,11 +64,9 @@ stages:
   - deployment: Deploy
     displayName: Deploy
     environment: $(environmentName)
-
-    pool:
-    name: 'Default'
-    
-    strategy:
+pool:
+      name: 'Default' 
+      strategy:
       runOnce:
         deploy:
           steps:
