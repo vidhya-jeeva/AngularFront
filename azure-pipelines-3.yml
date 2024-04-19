@@ -27,7 +27,6 @@ stages:
   - job: Build
     displayName: Build
     pool:
-     
       vmImage: $(vmImageName)
 
     steps:
@@ -55,8 +54,6 @@ stages:
       artifact: drop
 
 - stage: Deploy
-
-    
   displayName: Deploy stage
   dependsOn: Build
   condition: succeeded()
@@ -64,9 +61,9 @@ stages:
   - deployment: Deploy
     displayName: Deploy
     environment: $(environmentName)
-pool:
+    pool:
       name: 'Default' 
-      strategy:
+    strategy:
       runOnce:
         deploy:
           steps:
