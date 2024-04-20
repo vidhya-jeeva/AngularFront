@@ -23,6 +23,10 @@ steps:
   displayName: 'npm install and build'
 
 - task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+    ArtifactName: 'webapp'
+   
  
   
 
