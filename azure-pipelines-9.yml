@@ -7,8 +7,8 @@ trigger:
 - main
 
 pool:
-  name: 'Default'
-  vmImage: ubuntu-latest
+   name: 'Default'
+   vmImage: ubuntu-latest
 
 steps:
 # - task: NodeTool@0
@@ -27,3 +27,7 @@ steps:
     containerRegistry: 'dockerapp'
     command: 'buildAndPush'
     Dockerfile: 'docker'
+
+- task: DockerInstaller@0
+  inputs:
+    dockerVersion: '17.09.0-ce'
