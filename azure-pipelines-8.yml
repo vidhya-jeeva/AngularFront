@@ -26,7 +26,11 @@ steps:
   inputs:
     PathtoPublish: '$(System.DefaultWorkingDirectory)'
     ArtifactName: 'webapp'
-   
+- task: Docker@2
+  inputs:
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    EXPOSE: '8050'
  
   
 
