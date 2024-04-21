@@ -35,7 +35,7 @@ steps:
   inputs:
     containerRegistry: 'dockerapp'
     command: 'buildAndPush'
-    Dockerfile: '../docker/Dockerfile'
+    Dockerfile: '/docker'
  
   
 
