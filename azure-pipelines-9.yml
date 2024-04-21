@@ -34,7 +34,7 @@ steps:
     azureContainerRegistry: '{"loginServer":"dockerecomm.azurecr.io", "id" : "/subscriptions/2c72b524-e7f4-4285-8666-6cbe2a5b7603/resourceGroups/appsvc_linux_centralus/providers/Microsoft.ContainerRegistry/registries/dockerecomm"}'
     dockerComposeFile: '**/docker-compose.yml'
     action: 'Run a Docker Compose command'
-    dockerComposeCommand: 'test'
+    dockerComposeCommand: 'buildAndPush'
 
 # - task: Docker@2
 #   inputs:
