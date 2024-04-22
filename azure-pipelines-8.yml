@@ -29,7 +29,7 @@ steps:
 
 - task: Maven@4
   inputs:
-    mavenPomFile: '**/spring-boot-ecommerce/pom.xml'
+    mavenPomFile: '$(System.DefaultWorkingDirectory)/_AngularFront.git/spring-boot-ecommerce/pom.xml'
     goals: 'package'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
