@@ -27,13 +27,14 @@ stages:
   - job: MavenPackageAndPublishArtifacts
     displayName: Maven Package and Publish Artifacts
     pool:
+      name: 'Default'
       vmImage: $(vmImageName)
 
     steps:
     - task: Maven@3
       displayName: 'Maven Package'
       inputs:
-        mavenPomFile: 'pom.xml'
+        mavenPomFile: 'spring-boot-ecommerce/pom.xml'
 
     - task: CopyFiles@2
       displayName: 'Copy Files to artifact staging directory'
@@ -53,8 +54,8 @@ stages:
   - deployment: DeployLinuxWebApp
     displayName: Deploy Linux Web App
     environment: $(environmentName)
-    pool:
-      name: Hosted Windows 2019 with VS2019
+    pool: 
+      name: 'Default'
       vmImage: $(vmImageName)
     strategy:
       runOnce:
