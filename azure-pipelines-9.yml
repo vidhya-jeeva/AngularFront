@@ -43,8 +43,12 @@ steps:
 #     command: 'buildAndPush'
 #     Dockerfile: '**/docker'
 
+- task: DockerInstaller@0
+  inputs:
+    dockerVersion: '17.09.0-ce'
 - task: Docker@2
   inputs:
     containerRegistry: 'shoppydoc'
+    repository: 'AngularFront.git'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
