@@ -18,6 +18,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
+      name: 'Hosted Windows 2019 with VS2019'
       vmImage: ubuntu-latest
     steps:
     - task: Docker@2
