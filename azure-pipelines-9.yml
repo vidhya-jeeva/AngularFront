@@ -47,4 +47,4 @@ steps:
   inputs:
     containerRegistry: 'shoppydoc'
     command: 'buildAndPush'
-    Dockerfile: '**/docker/Dockerfile'
+    Dockerfile: '$(Build.SourcesDirectory)/docker/Dockerfile'
