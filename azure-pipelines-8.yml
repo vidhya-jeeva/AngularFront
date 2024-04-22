@@ -8,7 +8,7 @@ trigger:
 
 pool:
   name: 'Hosted Windows 2019 with VS2019'
-  vmImage: ubuntu-latest
+  vmImage: 'windows-latest'
 
 steps:
 - task: NodeTool@0
@@ -29,7 +29,7 @@ steps:
 
 - task: Maven@4
   inputs:
-    mavenPomFile: 'pom.xml'
+    mavenPomFile: '/pom.xml'
     goals: 'package'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
