@@ -51,4 +51,4 @@ steps:
     containerRegistry: 'shoppydoc'
     repository: 'AngularFront.git'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
