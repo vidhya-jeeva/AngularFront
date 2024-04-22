@@ -27,7 +27,7 @@ steps:
 #     PathtoPublish: '$(System.DefaultWorkingDirectory)'
 #     ArtifactName: 'webapp'
 
-- task: Maven@4
+- task: Maven@3
   inputs:
     mavenPomFile: 'spring-boot-ecommerce/pom.xml'
     goals: 'package'
