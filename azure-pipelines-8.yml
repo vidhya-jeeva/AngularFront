@@ -27,7 +27,7 @@ steps:
     PathtoPublish: '$(System.DefaultWorkingDirectory)'
     ArtifactName: 'webapp'
 
-- task: Maven@3
+- task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'package'
