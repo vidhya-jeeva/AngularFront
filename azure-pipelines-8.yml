@@ -22,20 +22,20 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)'
-    ArtifactName: 'webapp'
+# - task: PublishBuildArtifacts@1
+#   inputs:
+#     PathtoPublish: '$(System.DefaultWorkingDirectory)'
+#     ArtifactName: 'webapp'
 # - task: Docker@2
 #   inputs:
 #     command: 'buildAndPush'
 #     Dockerfile: '**/docker'
 
-- task: Docker@2
-  inputs:
-    containerRegistry: 'dockerapp'
-    command: 'buildAndPush'
-    Dockerfile: '/docker'
+# - task: Docker@2
+#   inputs:
+#     containerRegistry: 'dockerapp'
+#     command: 'buildAndPush'
+#     Dockerfile: '/docker'
  
   
 
