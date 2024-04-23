@@ -22,15 +22,7 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
 
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1 (2c72b524-e7f4-4285-8666-6cbe2a5b7603)'
-    appType: 'webApp'
-    WebAppName: 'shopycart-app'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    appSettings: |
-      WEBSITE_RUN_FROM_PACKAGE=1
+
   
 - task: JavaToolInstaller@0
   inputs:
@@ -52,3 +44,15 @@ steps:
   inputs:
     PathtoPublish: '$(System.DefaultWorkingDirectory)'
     ArtifactName: 'webapp'
+
+    
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure subscription 1 (2c72b524-e7f4-4285-8666-6cbe2a5b7603)'
+    appType: 'webApp'
+    appName: 'shopycart-app'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
+    appSettings: |
+      WEBSITE_RUN_FROM_PACKAGE=1
