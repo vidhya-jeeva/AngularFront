@@ -25,6 +25,11 @@ public class CheckoutController {
     {
         this.checkoutService = checkoutService;
     }
+    @GetMapping("/healthcheck")
+    public healthCheck placeOrder()
+    {
+        return "Ok!! Pakka!!";
+    }
 
     @PostMapping("/purchase")
     public PurchaseResponse placeOrder(@RequestBody Purchase purchase)
