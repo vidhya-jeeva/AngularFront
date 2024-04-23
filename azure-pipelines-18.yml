@@ -9,8 +9,14 @@ trigger:
 pool:
   name: 'Hosted Windows 2019 with VS2019'
   vmImage: ubuntu-latest
+ 
 
 steps:
+- script: |
+    java -version
+  env:
+    JAVA_HOME: $(JAVA_HOME_8_X64)
+    PATH: $(JAVA_HOME_11_X64)/bin;$(PATH)
 - task: JavaToolInstaller@0
   inputs:
     versionSpec: '11'
