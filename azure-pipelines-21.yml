@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name: 'Hosted Windows 2019 with VS2019'
+  name: 'Default'
   vmImage: ubuntu-latest
 
 steps:
