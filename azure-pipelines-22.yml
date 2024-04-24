@@ -52,7 +52,7 @@ steps:
     azureSubscription: 'Azure subscription 1 (2c72b524-e7f4-4285-8666-6cbe2a5b7603)'
     appType: 'webApp'
     appName: 'shopycart-app'
-    package: '$(System.DefaultWorkingDirectory)/_vidhya-jeeva.AngularFront (10)'
+    package: '$(System.DefaultWorkingDirectory)/_vidhya-jeeva.AngularFront (11)'
     deploymentMethod: 'auto'
     appSettings: |
       WEBSITE_RUN_FROM_PACKAGE=1
