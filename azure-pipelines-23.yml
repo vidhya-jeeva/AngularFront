@@ -52,6 +52,8 @@ steps:
   inputs:
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
+  env:
+    DOCKER_BUILD_VERBOSE: '1'
 
 # - task: AzureWebApp@1
 #   inputs:
