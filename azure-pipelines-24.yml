@@ -76,3 +76,5 @@ steps:
     containerRegistry: 'dockerecomm'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    arguments: '--verbose'
+
