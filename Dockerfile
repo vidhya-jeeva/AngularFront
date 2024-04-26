@@ -1,20 +1,20 @@
 # Stage 1: Build Angular Application
-FROM node:14 AS angular-build
+FROM node:17 AS angular-build
 WORKDIR /app
-COPY frontend/ /app
+COPY angular-ecomm/ /app
 RUN npm install
-RUN npm run build
+RUN npm run build --prod
 
 # Stage 2: Build Spring Boot Application
 FROM maven:3.8.4-jdk-11 AS spring-build
 WORKDIR /app
-COPY backend/ /app
-RUN mvn clean package
+COPY spring-boot-ecommerce/ /app
+RUN mvn -f /app/pom.xml clean package
 
 # Stage 3: Final Image
 FROM openjdk:11-jre-slim
 WORKDIR /app
 COPY --from=spring-build /app/target/spring-boot-ecommerce-0.0.1-SNAPSHOT.jar /app
-COPY --from=angular-build /app/dist/angular-ecomm /app/frontend
+COPY --from=angular-build /app/dist/angular-ecomm /app/angular-ecomm
 EXPOSE 8080
 CMD ["java", "-jar", "spring-boot-ecommerce-0.0.1-SNAPSHOT.jar"]
