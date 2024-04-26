@@ -67,7 +67,12 @@ steps:
 - task: DockerInstaller@0
   inputs:
     dockerVersion: '20.10.10'
+# - task: Docker@2
+#   inputs:
+#     command: 'buildAndPush'
+#     Dockerfile: '**/Dockerfile'
 - task: Docker@2
   inputs:
+    containerRegistry: 'dockerecomm'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
