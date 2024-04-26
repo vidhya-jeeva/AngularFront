@@ -40,20 +40,20 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     PathtoPublish: '$(System.DefaultWorkingDirectory)'
-#     ArtifactName: 'webapp'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)'
+    ArtifactName: 'webapp'
 
-- task: DockerInstaller@0
-  inputs:
-    dockerVersion: '17.09.0-ce'
-- task: Docker@2
-  inputs:
-    command: 'buildAndPush'
-    Dockerfile: 'Dockerfile'
-  env:
-    DOCKER_BUILD_VERBOSE: '1'
+# - task: DockerInstaller@0
+#   inputs:
+#     dockerVersion: '17.09.0-ce'
+# - task: Docker@2
+#   inputs:
+#     command: 'buildAndPush'
+#     Dockerfile: 'Dockerfile'
+#   env:
+#     DOCKER_BUILD_VERBOSE: '1'
 
 # - task: AzureWebApp@1
 #   inputs:
