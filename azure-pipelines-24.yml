@@ -47,7 +47,7 @@ steps:
 
 - task: DockerInstaller@0
   inputs:
-    dockerVersion: '17.09.0-ce'
+    dockerVersion: '20.10.0'
 
 - task: Docker@2
   inputs:
