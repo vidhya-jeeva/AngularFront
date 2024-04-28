@@ -23,6 +23,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
+      name: 'Default'
       vmImage: $(vmImageName)
 
     steps:
