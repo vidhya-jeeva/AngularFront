@@ -51,9 +51,9 @@ steps:
 - task: Docker@2
   inputs:
     command: 'buildAndPush'
-    Dockerfile: '/Dockerfile'
-    container: dockerecomm
-    tags: 'latest'
+    Dockerfile: 'Dockerfile'
+    containerRegistry: 'dockerecomm'
+    tags: '$(Build.BuildId)'
 
   # env:
   #   DOCKER_BUILD_VERBOSE: '1'
