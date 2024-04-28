@@ -54,7 +54,8 @@ steps:
     Dockerfile: 'Dockerfile'
     containerRegistry: 'dockerecomm'
     tags: '$(Build.BuildId)'
-    
+    arguments: '--platform windows/amd64'
+
 
   # env:
   #   DOCKER_BUILD_VERBOSE: '1'
