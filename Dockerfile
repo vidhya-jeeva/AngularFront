@@ -1,5 +1,5 @@
 # Stage 1: Build Angular Application
-FROM node:20 as AS builder --platform=windows/amd64
+FROM node:20 as angular-build
 
 WORKDIR /app
 
