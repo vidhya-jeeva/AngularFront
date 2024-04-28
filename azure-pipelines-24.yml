@@ -45,17 +45,16 @@ steps:
 #     PathtoPublish: '$(System.DefaultWorkingDirectory)'
 #     ArtifactName: 'webapp'
 
-# - task: DockerInstaller@0
-#   inputs:
-#     dockerVersion: '17.09.0-ce'
+- task: DockerInstaller@0
+  inputs:
+    dockerVersion: '17.09.0-ce'
+
 - task: Docker@2
   inputs:
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
     containerRegistry: 'dockerecomm'
-    tags: '$(Build.BuildId)'
-    arguments: '--platform windows/amd64'
-
+    # tags: '$(Build.BuildId)'
 
   # env:
   #   DOCKER_BUILD_VERBOSE: '1'
