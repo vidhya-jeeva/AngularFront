@@ -51,8 +51,9 @@ steps:
 
 - task: Docker@2
   inputs:
+    
+    Dockerfile: 'Dockerfile' 
     command: 'buildAndPush'
-    Dockerfile: 'Dockerfile'
     containerRegistry: 'dockerecomm'
     # tags: '$(Build.BuildId)'
 
