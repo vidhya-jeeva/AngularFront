@@ -23,7 +23,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      name: 'Default'
+      name: 'Hosted Windows 2019 with VS2019'
       vmImage: $(vmImageName)
 
     steps:
@@ -60,7 +60,7 @@ stages:
     displayName: Deploy
     environment: $(environmentName)
     pool:
-      name: 'Default'
+      name: 'Hosted Windows 2019 with VS2019'
     strategy:
       runOnce:
         deploy:
