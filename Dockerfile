@@ -1,15 +1,15 @@
 # Stage 1: Build Angular Application
-FROM node:20 as angular-build
+# FROM node:20 as angular-build
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY package*.json ./
+# COPY package*.json ./
 
-RUN npm install
+# RUN npm install
 
-COPY . .
+# COPY . .
 
-RUN npm run build
+# RUN npm run build
 
 # Stage 2: Build Spring Boot Application
 FROM maven:latest as spring-boot-build
@@ -31,7 +31,7 @@ FROM adoptopenjdk:11-jre-hotspot
 WORKDIR /app
 
 # Copy Angular build
-COPY --from=angular-build /app/dist/angular-ecomm /app/src/main/resources/static
+# COPY --from=angular-build /app/dist/angular-ecomm /app/src/main/resources/static
 
 # Copy Spring Boot build
 COPY --from=spring-boot-build /app/target/spring-boot-ecommerce-0.0.1-SNAPSHOT.jar /app/app.jar
