@@ -24,38 +24,38 @@ steps:
 
 
   
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '11'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'spring-boot-ecommerce/pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '11'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+# - task: JavaToolInstaller@0
+#   inputs:
+#     versionSpec: '11'
+#     jdkArchitectureOption: 'x64'
+#     jdkSourceOption: 'PreInstalled'
+# - task: Maven@3
+#   inputs:
+#     mavenPomFile: 'spring-boot-ecommerce/pom.xml'
+#     mavenOptions: '-Xmx3072m'
+#     javaHomeOption: 'JDKVersion'
+#     jdkVersionOption: '11'
+#     jdkArchitectureOption: 'x64'
+#     publishJUnitResults: true
+#     testResultsFiles: '**/surefire-reports/TEST-*.xml'
+#     goals: 'package'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)'
-    ArtifactName: 'webapp'
+# - task: PublishBuildArtifacts@1
+#   inputs:
+#     PathtoPublish: '$(System.DefaultWorkingDirectory)'
+#     ArtifactName: 'webapp'
 
 # - task: DockerInstaller@0
 #   inputs:
 #     dockerVersion: '19.03.14'
 
-# - task: Docker@2
-#   inputs:
+- task: Docker@2
+  inputs:
     
-#     Dockerfile: 'Dockerfile' 
-#     command: 'buildAndPush'
-    # containerRegistry: 'dockerecomm'
-    # tags: '$(Build.BuildId)'
+    Dockerfile: 'Dockerfile' 
+    command: 'buildAndPush'
+    containerRegistry: 'dockerecomm'
+    tags: '$(Build.BuildId)'
 
   # env:
   #   DOCKER_BUILD_VERBOSE: '1'
