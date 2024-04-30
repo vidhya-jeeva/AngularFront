@@ -55,8 +55,7 @@ steps:
     
     Dockerfile: 'Dockerfile' 
     command: 'buildAndPush'
-    containerRegistry: 'dockerecomm'
-    tags: '$(Build.BuildId)'
+    # containerRegistry: 'dockerecomm'
 
   # env:
   #   DOCKER_BUILD_VERBOSE: '1'
